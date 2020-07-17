@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="todo-styles.css">
+    <title>Todo list App</title>
+</head>
+<body>
+  <!--s1_app-heading -->
+   <section>
+       
+   </section>
+   
+   <!--s2_add-item-form-->
+   <section>
+      <form id="save-form" >
+          <div class="grid-container">
+            <label>Title
+              <input id="save-form--title" type="text" placeholder="Title" required>
+            </label>
+            <label>Details
+              <input id="save-form--details" type="text" placeholder="Details" required>
+            </label>
+            <input type="submit" class="success button" value="Add item" >
+          </div>
+       </form>
+       
+   </section>
+   
+   <!--s3_todo-list-->
+   <section>
+      <div class="grid-container">
+          <ul id="s3_todo-list--ul" class="vertical " >
+              
+          </ul>
+      </div>
+       
+   </section>
+    
+    
+    <script src="to-do.js"></script>
+</body>
+</html>

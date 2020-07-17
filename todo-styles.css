@@ -1,0 +1,6 @@
+.hide-item{
+    display: none;
+}
+.task-done{
+    text-decoration: line-through;
+}
