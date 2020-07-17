@@ -10,6 +10,7 @@ const firstFunction = ()=>{
         })
         
         parsedLocalArray.forEach(item=>{
+            if(!!item.title){
             const todoLi = document.createElement('li');
             const todoMainDiv = document.createElement('div');
             const todoMainDivTitle = document.createElement('h3');
@@ -108,6 +109,7 @@ const firstFunction = ()=>{
             todoLi.appendChild(todoMainDiv);
             todoLi.appendChild(todoEditDiv);
             ulTodo.appendChild(todoLi);
+            }
         
         })
         
