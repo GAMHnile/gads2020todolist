@@ -1,6 +1,40 @@
+#s1_app-heading{
+    text-align: center;
+    font-family: 'Merienda', cursive;
+    font-weight: 700;
+    background-color: silver;
+    color: white;
+}
+
 .hide-item{
     display: none;
 }
 .task-done{
     text-decoration: line-through;
 }
+#s3_todo-list{
+    grid-area: s3_todo-list;
+}
+#s2_add-item-form{
+    grid-area: s2_add-item-form;
+}
+.layout-grid{
+    background: url('https://thumbs.dreamstime.com/z/to-do-list-white-paper-pencils-background-template-56711188.jpg') center no-repeat;
+    background-size: cover
+}
+
+@media (min-width: 650px){
+    .layout-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "s3_todo-list s2_add-item-form"
+    }
+    
+    #s3_todo-list{
+        height: 70vh;
+        overflow-y: scroll;
+    }
+    
+}
+

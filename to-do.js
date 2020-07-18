@@ -6,7 +6,7 @@ const firstFunction = ()=>{
         const parsedLocalArray = localStorageArray.map(value=> JSON.parse(value));
         //sort array by time created so items maintain their position
         parsedLocalArray.sort((a,b)=>{
-            return (a.time-b.time)
+            return (b.time-a.time)
         })
         
         parsedLocalArray.forEach(item=>{

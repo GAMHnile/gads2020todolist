@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="todo-styles.css">
     <title>Todo list App</title>
 </head>
 <body>
-  <!--s1_app-heading -->
+  <!--s1_app-title -->
    <section>
-       
+       <h1 id="s1_app-heading"> To do list by George (GAMHnile)</h1>
    </section>
    
+   <div class="layout-grid grid-container">
    <!--s2_add-item-form-->
-   <section>
+   <section id="s2_add-item-form" >
       <form id="save-form" >
           <div class="grid-container">
             <label>Title
@@ -32,7 +33,7 @@
    </section>
    
    <!--s3_todo-list-->
-   <section>
+   <section id="s3_todo-list" >
       <div class="grid-container">
           <ul id="s3_todo-list--ul" class="vertical " >
               
@@ -41,6 +42,7 @@
        
    </section>
     
+    </div>
     
     <script src="to-do.js"></script>
 </body>
