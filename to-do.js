@@ -142,7 +142,7 @@ document.querySelector("#save-form").addEventListener("submit", function(event) 
     const title = titleInput.value;
     const details = document.getElementById('save-form--details').value;
     if(Object.keys(localStorage).includes(title)){
-        alert('Title already exists');
+        alert(`${title} already exists`);
         titleInput.classList.add('already-exists');
     }else{
         const time = new Date;
