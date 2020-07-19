@@ -18,10 +18,16 @@
 #s2_add-item-form{
     grid-area: s2_add-item-form;
 }
-.layout-grid{
-    background: url('https://thumbs.dreamstime.com/z/to-do-list-white-paper-pencils-background-template-56711188.jpg') center no-repeat;
-    background-size: cover
+.shift-right{
+    transform: translateX(100%);
 }
+.already-exists{
+    border: 2px solid red;
+}
+/*.layout-grid{
+    background: url('https://static.skillshare.com/uploads/project/5d295996bf2f02926011f3c99bd67869/7278d5fd') center no-repeat;
+    background-size: cover
+}*/
 
 @media (min-width: 650px){
     .layout-grid{

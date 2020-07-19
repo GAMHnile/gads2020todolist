@@ -30,7 +30,7 @@ const firstFunction = ()=>{
             //create deletebutton and add it's  event listener
             const todoDeleteButon = document.createElement('button');
             todoDeleteButon.innerHTML = 'Delete';
-            todoDeleteButon.setAttribute('class', 'alert button')
+            todoDeleteButon.setAttribute('class', 'alert button shift-right');
             todoDeleteButon.addEventListener('click', ()=>{
                 localStorage.removeItem(item.title);
                 ulTodo.innerHTML = null;
@@ -138,22 +138,31 @@ firstFunction();
 
 document.querySelector("#save-form").addEventListener("submit", function(event) {
     event.preventDefault();
-    const title = document.getElementById('save-form--title').value;
+    const titleInput = document.getElementById('save-form--title');
+    const title = titleInput.value;
     const details = document.getElementById('save-form--details').value;
-    const time = new Date;
-    const timeForSort =time.getTime();
+    if(Object.keys(localStorage).includes(title)){
+        alert('Title already exists');
+        titleInput.classList.add('already-exists');
+    }else{
+        const time = new Date;
+        const timeForSort =time.getTime();
+        
+        const data = JSON.stringify({
+            title,
+            details,
+            time: timeForSort
+        })
+        
+        window.localStorage.setItem(title, data);
+        //alert(`${title} added to todo list.`);
+        const ulTodo = document.getElementById('s3_todo-list--ul');
+        ulTodo.innerHTML = null;
+        firstFunction();
+        document.getElementById('save-form--title').value="";
+        document.getElementById('save-form--details').value="";
+        titleInput.classList.remove('already-exists');
+    }
     
-    const data = JSON.stringify({
-        title,
-        details,
-        time: timeForSort
-    })
     
-    window.localStorage.setItem(title, data);
-    //alert(`${title} added to todo list.`);
-    const ulTodo = document.getElementById('s3_todo-list--ul');
-    ulTodo.innerHTML = null;
-    firstFunction();
-    document.getElementById('save-form--title').value="";
-    document.getElementById('save-form--details').value="";
 });
