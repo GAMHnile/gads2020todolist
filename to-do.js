@@ -8,7 +8,7 @@ const firstFunction = ()=>{
         parsedLocalArray.sort((a,b)=>{
             return (b.time-a.time)
         })
-        console.log(parsedLocalArray);
+    
         parsedLocalArray.forEach(item=>{
             if(!!item.title){
             const todoLi = document.createElement('li');
