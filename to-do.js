@@ -8,7 +8,7 @@ const firstFunction = ()=>{
         parsedLocalArray.sort((a,b)=>{
             return (b.time-a.time)
         })
-        
+        console.log(parsedLocalArray);
         parsedLocalArray.forEach(item=>{
             if(!!item.title){
             const todoLi = document.createElement('li');
@@ -129,8 +129,11 @@ firstFunction();
 
 
 
-
-
+//Warning paragraph for entry of a title that already exists.
+const titleLabel = document.getElementById('title-label');
+const warningPar = document.createElement('p');
+warningPar.setAttribute('class', 'hide-item already-p');
+titleLabel.appendChild(warningPar);
 
 
 
@@ -141,9 +144,12 @@ document.querySelector("#save-form").addEventListener("submit", function(event) 
     const titleInput = document.getElementById('save-form--title');
     const title = titleInput.value;
     const details = document.getElementById('save-form--details').value;
+    
     if(Object.keys(localStorage).includes(title)){
-        alert(`Title '${title}' already exists`);
+        warningPar.innerHTML = `Title '${title}' already exists`;
+        warningPar.classList.remove('hide-item');
         titleInput.classList.add('already-exists');
+        
     }else{
         const time = new Date;
         const timeForSort =time.getTime();
@@ -153,6 +159,9 @@ document.querySelector("#save-form").addEventListener("submit", function(event) 
             details,
             time: timeForSort
         })
+        
+        warningPar.classList.add('hide-item');
+        
         
         window.localStorage.setItem(title, data);
         //alert(`${title} added to todo list.`);

@@ -24,6 +24,9 @@
 .already-exists{
     border: 2px solid red;
 }
+.already-p{
+    color: red;
+}
 /*.layout-grid{
     background: url('https://static.skillshare.com/uploads/project/5d295996bf2f02926011f3c99bd67869/7278d5fd') center no-repeat;
     background-size: cover
